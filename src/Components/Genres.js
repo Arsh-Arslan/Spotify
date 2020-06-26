@@ -5,26 +5,26 @@ class Genres extends Component {
     constructor(props) {
         super(props)
     
-        const userAccessToken="BQDqOmDX0Db9q-nnh54EMCZ1nv_62VJX-wV7VtexFm6fIQVjAguCUD9s_0qbY0z1JCXUW_i5B9pJOted60F0zXDGB_F5WGoC501rD7MkLK4y5cr7u6I9K7zh84I5UOhAJcVYQCgN66bGvvc31NuzQhrI8F6lXgQFRqJ7n5lszIRk"
+        // const userAccessToken="BQDqOmDX0Db9q-nnh54EMCZ1nv_62VJX-wV7VtexFm6fIQVjAguCUD9s_0qbY0z1JCXUW_i5B9pJOted60F0zXDGB_F5WGoC501rD7MkLK4y5cr7u6I9K7zh84I5UOhAJcVYQCgN66bGvvc31NuzQhrI8F6lXgQFRqJ7n5lszIRk"
 
-        fetch("https://api.spotify.com/v1/recommendations/available-genre-seeds", {
-            method: "GET",
-            headers: {
-                Accept: "application/json",
-              Authorization: `Bearer ${userAccessToken}`     
-            }
-          })
-          .then(response => response.json())
+        // fetch("https://api.spotify.com/v1/recommendations/available-genre-seeds", {
+        //     method: "GET",
+        //     headers: {
+        //         Accept: "application/json",
+        //       Authorization: `Bearer ${userAccessToken}`     
+        //     }
+        //   })
+        //   .then(response => response.json())
           
-          .then((res) => {
-            this.setState({genres:res.genres})
-            console.log(this.state.genres)
+        //   .then((res) => {
+        //     this.setState({genres:res.genres})
+        //     console.log(this.state.genres)
 
-          })
+        //   })
 
-        this.state = {
-             genres:[]
-        }
+        // this.state = {
+        //      genres:[]
+        // }
     }
     
     // componentDidMount() {
@@ -93,12 +93,12 @@ class Genres extends Component {
                 <div className="container" >
                     <div className="row my-2">
 
-                        {this.state.genres.map((genre,index) => {
-                            return <div className="col-3 my-3" key={index}>
+                        {cards.map(card => {
+                            return <div className="col-3 my-3" key={card.key}>
 
                                 <div className="card text-white bg-secondary">                           
                                     <div className="card-body my-5 mx-auto">
-                                        <h5 className="card-title">{genre}</h5>
+                                        <h5 className="card-title">{card.name}</h5>
                                     </div>
                                 </div>
 
